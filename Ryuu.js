@@ -2038,7 +2038,7 @@ break
 
 //tes
 const hideTag = async function(from, text){
-           let anu = await herman.groupMetadata(from)
+           let anu = await Ryuu.groupMetadata(from)
            let members = anu.participants
            let ane = []
            for (let i of members){
