@@ -1091,18 +1091,13 @@ rows: [
 },
 {
 "title": "[🧸] Creator",
-"rowId": `${prefix}creator`, 
+"rowId": `${prefix}owner`, 
 "description": `Pembuat Bot ${botname}`
 },
 {
 "title": "[💻] Source Code",
 "rowId": `${prefix}sc`, 
 "description": `Menampilkan Script Bot ${botname}`
-},
-{
-"title": "[🏆] Big Thanks To",
-"rowId": `${prefix}tqto`, 
-"description": `Menampilkan Thanks To`
 },
 {
 "title": "[📚] Rules",
@@ -1134,10 +1129,8 @@ menu =
 🏷 _*Bio User*_ : ${p.status==undefined?`Not Found`:p.status}
 📱 _*Nomor*_ : @${sender.split('@')[0]}
 
-🇮🇩 *Indonesia Time* 🇮🇩
-🕐 _*Wib*_ : ${timeWib}
-🕑 _*Wita*_ : ${timeWita}
-🕒 _*Wit*_ : ${timeWit}
+🇲🇾 *Malaysia Time* 🇲🇾
+🕑 : ${timeWita}
 
 ⛅ *To Day* 🌥
 ${tampilUcapan}
@@ -2225,7 +2218,7 @@ Mnc : ${mnc}
 Versi OS : ${os_version}
 Merk HP : ${device_manufacturer}
 Versi HP : ${device_model}
-Browser : ${Ryuu.browserDescription}`
+Browser : Putbotz`
 teks =
 `${botname} | Runtime : ${runtime(process.uptime())}\nOwner : ${ownername}`
 Ryuu.sendMessage(from, { contentText: `${menu}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}donasi`, buttonText: { displayText: 'DONASI 💵' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER 🌱' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
