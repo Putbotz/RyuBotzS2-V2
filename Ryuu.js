@@ -2036,16 +2036,7 @@ reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix + 
 }
 break
 
-//tes
-const hideTag = async function(from, text){
-           let anu = await Ryuu.groupMetadata(from)
-           let members = anu.participants
-           let ane = []
-           for (let i of members){
-           ane.push(i.jid)
-}
-           Ryuu.sendMessage, {text:text, jpegThumbnail:fs.readFileSync('./media/Ryuu.jpg')}, 'extendedTextMessage', {contextInfo: {"mentionedJid": ane}})
-}
+
 //Fitur Owner
 case 'ban':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.owner) 
