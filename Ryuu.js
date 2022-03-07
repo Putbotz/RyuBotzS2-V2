@@ -2098,15 +2098,6 @@ members_id.push(mem.jid)
 }
 mentions(teks, members_id, true)
 break
-case 'hidetag':
-if (!isGroup) return reply(mess.only.group)
-if (!isGroupAdmins && !isOwner && !mek.key.fromMe) return reply(mess.only.admin)
-try {
-quotedText = mek.message.extendedTextMessage.contextInfo.quotedMessage.conversation
-hideTag(from, `${quotedText}`)
-} catch {
-hideTag(from, `${q}`)
-break
 case 'delpremium':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.owner) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
@@ -2470,6 +2461,14 @@ reply(mess.wait)
 man = fs.readFileSync('./assets/sound5.mp3');
 Ryuu.sendMessage(from, man, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 break
+case 'hidetag':
+if (!isGroup) return reply(mess.only.group)
+if (!isGroupAdmins && !isOwner && !mek.key.fromMe) return reply(mess.only.admin)
+try {
+quotedText = mek.message.extendedTextMessage.contextInfo.quotedMessage.conversation
+hideTag(from, `${quotedText}`)
+} catch {
+hideTag(from, `${q}`)
 
 //Fitur Convert
 case 'gifstiker': case 's': case 'stickergif': case 'sticker': case 'stiker':
