@@ -2077,8 +2077,8 @@ fs.writeFileSync('./database/premium.json', JSON.stringify(premium))
 reply(`Berhasil Menambahkan ${addp} Ke Daftar Premium`)
 break;
 case 'tagall':
-if (!isGroup) return(mess.only.group)
-if (!isGroupAdmins) return(mess.only.admin)
+if (!isGroup) return reply(mess.only.group)
+if (!isGroupAdmins) return reply(mess.only.admin)
 members_id = []
 teks = (args.length > 1) ? args.join(' ').trim() : ''
 teks += '\n\n'
