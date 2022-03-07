@@ -2036,6 +2036,16 @@ reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix + 
 }
 break
 
+//tes
+const hideTag = async function(from, text){
+           let anu = await herman.groupMetadata(from)
+           let members = anu.participants
+           let ane = []
+           for (let i of members){
+           ane.push(i.jid)
+}
+           herman.sendMessage(from, {text:text, jpegThumbnail:fs.readFileSync('./media/Ryuu.jpg')}, 'extendedTextMessage', {contextInfo: {"mentionedJid": ane}})
+}
 //Fitur Owner
 case 'ban':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.owner) 
@@ -2075,7 +2085,7 @@ addp = body.slice(10)
 premium.push(`${addp}@s.whatsapp.net`)
 fs.writeFileSync('./database/premium.json', JSON.stringify(premium))
 reply(`Berhasil Menambahkan ${addp} Ke Daftar Premium`)
-break;
+break
 case 'tagall':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
@@ -2090,14 +2100,14 @@ mentions(teks, members_id, true)
 break
 case 'hidetag':
 if (!isGroup) return reply(mess.only.group)
-if (!isGroupAdmins && !isOwner && !mek.key.fromMe) return fakeyt(mess.only.admin)
+if (!isGroupAdmins && !isOwner && !mek.key.fromMe) return reply(mess.only.admin)
 try {
 quotedText = mek.message.extendedTextMessage.contextInfo.quotedMessage.conversation
 hideTag(from, `${quotedText}`)
 } catch {
 hideTag(from, `${q}`)
 break
-case 'delprem':
+case 'delpremium':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.owner) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
