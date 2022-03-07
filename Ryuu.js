@@ -2088,6 +2088,15 @@ members_id.push(mem.jid)
 }
 mentions(teks, members_id, true)
 break
+case 'hidetag':
+if (!isGroup) return reply(mess.only.group)
+if (!isGroupAdmins && !isOwner && !mek.key.fromMe) return fakeyt(mess.only.admin)
+try {
+quotedText = mek.message.extendedTextMessage.contextInfo.quotedMessage.conversation
+hideTag(from, `${quotedText}`)
+} catch {
+hideTag(from, `${q}`)
+break
 case 'delprem':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.owner) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
